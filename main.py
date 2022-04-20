@@ -63,7 +63,13 @@ if bert_:
     # submission.to_csv("./submission/submission_bert.csv", index=False, header=True)
     # print('Submission is ready!')
 
-    ### Evaluation on test dataset
+    ### Evaluation on test dataset: classification_report + confusion matrix + ROC curves
+    from function.test import *
+    model_name= 'bert'
+    evaluation(model_name,
+               y_true = submission['Sentiment'],
+               y_pred = submission['Sentiment_{}'.format(model_name)],
+               y_score = label_predicted['Sentiment'])
 
     ### Clean up memory/GPU etc.
     del model
@@ -98,7 +104,13 @@ if RoBERTa_:
     # submission.to_csv("./submission/submission_RoBERTa.csv", index=False, header=True)
     # print('Submission is ready!')
 
-    ### Evaluation on test dataset
+    ### Evaluation on test dataset: classification_report + confusion matrix + ROC curves
+    from function.test import *
+    model_name= 'RoBERTa'
+    evaluation(model_name,
+               y_true = submission['Sentiment'],
+               y_pred = submission['Sentiment_{}'.format(model_name)],
+               y_score = label_predicted['Sentiment'])
 
     ### Clean up memory/GPU etc.
     del model2
@@ -133,9 +145,13 @@ if DistilBERT_:
     # submission.to_csv("./submission/submission_DistilBERT.csv", index=False, header=True)
     # print('Submission is ready!')
 
-
-    ### Evaluation on test dataset
-
+    ### Evaluation on test dataset: classification_report + confusion matrix + ROC curves
+    from function.test import *
+    model_name= 'DistilBERT'
+    evaluation(model_name,
+               y_true = submission['Sentiment'],
+               y_pred = submission['Sentiment_{}'.format(model_name)],
+               y_score = label_predicted['Sentiment'])
 
     ### Clean up memory/GPU etc.
     del model3
@@ -170,35 +186,15 @@ if XLNet_:
     # submission.to_csv("./submission/submission_XLNet.csv", index=False, header=True)
     # print('Submission is ready!')
 
-    ### Evaluation on test dataset
+    ### Evaluation on test dataset: classification_report + confusion matrix + ROC curves
+    from function.test import *
+    model_name= 'XLNet'
+    evaluation(model_name,
+               y_true = submission['Sentiment'],
+               y_pred = submission['Sentiment_{}'.format(model_name)],
+               y_score = label_predicted['Sentiment'])
 
     ### Clean up memory/GPU etc.
     del model4
     gc.collect()  # memory
     K.clear_session()  # clear a session
-
-# ======================================================================================================================
-# model_A = A(args...)                 # Build model object.
-# acc_A_train = model_A.train(args...) # Train model based on the training set (you should fine-tune your model based on validation set.)
-# acc_A_test = model_A.test(args...)   # Test model based on the test set.
-# Clean up memory/GPU etc...             # Some code to free memory if necessary.
-
-
-# ======================================================================================================================
-# Task B
-# model_B = B(args...)
-# acc_B_train = model_B.train(args...)
-# acc_B_test = model_B.test(args...)
-# Clean up memory/GPU etc...
-
-
-
-
-# ======================================================================================================================
-## Print out your results with following format:
-# print('TA:{},{};TB:{},{};'.format(acc_A_train, acc_A_test,
-#                                                         acc_B_train, acc_B_test))
-
-# If you are not able to finish a task, fill the corresponding variable with 'TBD'. For example:
-# acc_A_train = 'TBD'
-# acc_B_test = 'TBD'
