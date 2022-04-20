@@ -9,8 +9,14 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0"
 # ======================================================================================================================
 # Data Load
 df = pd.read_csv('./Datasets/train.tsv', sep='\t')
+
 # df_test=pd.read_csv('./Datasets/test.tsv', sep='\t')
-sample_submission = pd.read_csv('./Datasets/sampleSubmission.csv')
+'''
+Tips:
+True labels are not available in df_test
+We will split df into train/val/test to fine-tune our models based on validation set
+and evaluate our models based on test set
+'''
 
 # ======================================================================================================================
 # Data preprocessing
@@ -129,6 +135,7 @@ if DistilBERT_:
 
 
     ### Evaluation on test dataset
+
 
     ### Clean up memory/GPU etc.
     del model3
