@@ -4,6 +4,12 @@ from sklearn.model_selection import train_test_split
 
 def data_preprocessing(df):
 
+    '''
+    input: original dataset
+    output: training, testing, validation dataset,
+            submission(test dataset with labels in .csv)
+    '''
+
     ### Split into train(validation within it) and test
     df_train, df_test = train_test_split(df, test_size=0.1, random_state=3)  # test:train = 1:9
     submission = df_test[['PhraseId', 'Sentiment']]
@@ -20,7 +26,7 @@ def data_preprocessing(df):
     data = data.copy()
     data_test = data_test.copy()
 
-    ### Set your model output as categorical and save in new label col
+    ### Set your model output as categorical and save in new label column
     data['Sentiment_label'] = pd.Categorical(data['Sentiment'])
     data_test['Sentiment_label'] = pd.Categorical(data_test['Sentiment'])
 

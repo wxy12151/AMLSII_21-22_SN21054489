@@ -10,6 +10,9 @@ from transformers import XLNetTokenizer, TFXLNetModel, XLNetConfig
 import sentencepiece
 
 def model_bert(max_length, data_train):
+    '''
+    model setups + build the model
+    '''
 
     # Name of the BERT model to use
     model_name = 'bert-base-uncased'
