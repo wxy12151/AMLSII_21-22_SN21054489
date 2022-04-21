@@ -45,9 +45,13 @@ Even though the train/test split has been preserved for the purposes of benchmar
 The sentiment labels and numbers are within restructured training set:
 
 0 - negative-6371
+
 1 - somewhat negative-24545
+
 2 - neutral-71624
+
 3 - somewhat positive-29626
+
 4 - positive-8288
 
 ## 2.2. Folder "Function"
@@ -110,13 +114,9 @@ Notes. It will run all steps of this project by calling the functions in the fol
 
 ## 3.2. Run the code on "main.ipynb"
 
-### Training: run "DL_train.py".
+Notes. This contains more detailed work than in "main.py", including the EDA process at the beginning, open in Jupyter for running step by step.
 
-### Testing: run "DL_test.py"
-
-Notes. This contains more detailed work than in "main.py", including the EDA process at the beginning, open in Jupyer for running step by step.
-
-### All trained models employed in the report can obtained in the  [GOOGLE DRIVE](https://drive.google.com/drive/folders/1STGwHfYwuoKsOVNKbPQgW3_PtNOjfgqk?usp=sharing) link
+### All trained models employed in the report can be obtained in the  [GOOGLE DRIVE](https://drive.google.com/drive/folders/1STGwHfYwuoKsOVNKbPQgW3_PtNOjfgqk?usp=sharing) link
 
 ### DO NOT CHANGE THE FILE LEVEL
 
